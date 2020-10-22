@@ -10,25 +10,25 @@ public class Desenha implements Visitor {
 
 	@Override
 	public Double visitaRetangulo(Retangulo r) {
-		System.out.println("Desenhando Retângulo!");
+		System.out.println("Retângulo desenhado!");
 		return null;
 	}
 
 	@Override
 	public Double visitaTriangulo(Triangulo t) {
-		System.out.println("Desenhando Triângulo!");
+		System.out.println("Triângulo desenhado!");
 		return null;
 	}
 
 	@Override
 	public Double visitaCirculo(Circulo c) {
-		System.out.println("Desenhando Circulo!");
+		System.out.println("Circulo desenhado!");
 		return null;
 	}
 
 	@Override
 	public Double visitaTrapezio(Trapezio c) {
-		System.out.println("Desenhando Trapézio!");
+		System.out.println("Trapézio desenhado!");
 		return null;
 	}
 	
