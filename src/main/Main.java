@@ -29,7 +29,7 @@ public class Main {
 		
 		for(Visitor visitor : visitors) {
 			System.out.println();
-			System.out.println("Executando " + visitor.getClass().getName());
+			System.out.println("Executando " + visitor.getClass().getSimpleName());
 			
 			System.out.print("Retângulo: ");
 			retangulo.aceitaVisita(visitor);
