@@ -1,44 +1,44 @@
 package visitor;
 
-import interfaces.VisitorIF;
+import interfaces.Visitor;
 import objetos.Circulo;
 import objetos.Retangulo;
 import objetos.Trapezio;
 import objetos.Triangulo;
 
-public class VisitorMaximizarFigura implements VisitorIF {
+public class MaximizaFigura implements Visitor {
 
 	@Override
-	public double visitaRetangulo(Retangulo r) {
+	public Double visitaRetangulo(Retangulo r) {
 		r.setAltura(r.getAltura() * 2);
 		r.setBase(r.getBase() * 2);
 		System.out.println("Retângulo maximizado!");
-		return -1;
+		return null;
 	}
 
 	@Override
-	public double visitaTriangulo(Triangulo t) {
+	public Double visitaTriangulo(Triangulo t) {
 		t.setAltura(t.getAltura() * 2);
 		t.setBase(t.getBase() * 2);
 		System.out.println("Triângulo maximizado!");
-		return -1;
+		return null;
 	}
 
 	@Override
-	public double visitaCirculo(Circulo c) {
+	public Double visitaCirculo(Circulo c) {
 		c.setRaio(c.getRaio() * 2);
 		System.out.println("Circulo maximizado!");
-		return -1;
+		return null;
 	}
 
 	@Override
-	public double visitaTrapezio(Trapezio c) {
+	public Double visitaTrapezio(Trapezio c) {
 		c.setBaseMaior(c.getBaseMaior() * 2);
 		c.setBaseMenor(c.getBaseMenor() * 2);
 		c.setAltura(c.getAltura() * 2);
-		c.setTamLados(c.getTamLados() * 2);
+		c.setLados(c.getLados() * 2);
 		System.out.println("Trapézio maximizado!");
-		return -1;
+		return null;
 	}
 	
 }

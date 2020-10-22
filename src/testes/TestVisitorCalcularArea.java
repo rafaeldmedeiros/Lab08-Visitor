@@ -6,54 +6,48 @@ import org.junit.jupiter.api.Test;
 
 import org.junit.jupiter.api.BeforeAll;
 
-import interfaces.VisitorIF;
+import interfaces.Visitor;
 import objetos.Circulo;
 import objetos.Retangulo;
 import objetos.Trapezio;
 import objetos.Triangulo;
-import visitor.VisitorCalculaArea;
+import visitor.CalculaArea;
 
 class TestVisitorCalcularArea {
-
-	static VisitorIF visitor;
-
-	static Circulo circulo;
-	static Triangulo triangulo;
-	static Retangulo retangulo;
-	static Trapezio trapezio;
+	
+	static Visitor vis;
+	static Circulo ci;
+	static Triangulo tri;
+	static Retangulo ret;
+	static Trapezio trp;
 	
 	@BeforeAll
 	static void init(){
-		visitor = new VisitorCalculaArea();
-		
-		circulo = new Circulo(5);
-		triangulo = new Triangulo(7, 3);
-		retangulo = new Retangulo(10, 5);
-		trapezio = new Trapezio(5, 8, 4, 3);
+		vis = new CalculaArea();
+		trp = new Trapezio(5, 10, 4, 3);
+		ci = new Circulo(100);
+		ret = new Retangulo(11, 5);
+		tri = new Triangulo(7, 8.1);
 	}
 
 	@Test
 	void calcularAreaCirculo() {
-		double expected = 78.53981633974483;
-		assertEquals(expected, visitor.visitaCirculo(circulo));
+		assertEquals(31415.926, vis.visitaCirculo(ci), 0.001);
 	}
 	
 	@Test
 	void calcularAreaTriangulo() {
-		double expected = 10.5;
-		assertEquals(expected, visitor.visitaTriangulo(triangulo));
+		assertEquals(28.349, vis.visitaTriangulo(tri), 0.001);
 	}
 	
 	@Test
 	void calcularAreaRetangulo() {
-		double expected = 50.0;
-		assertEquals(expected, visitor.visitaRetangulo(retangulo));
+		assertEquals(55, vis.visitaRetangulo(ret));
 	}
 	
 	@Test
 	void calcularAreaTrapezio() {
-		double expected = 19.5;
-		assertEquals(expected, visitor.visitaTrapezio(trapezio));
+		assertEquals(22.5, vis.visitaTrapezio(trp), 0.1);
 	}
 
 }

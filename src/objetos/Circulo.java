@@ -1,9 +1,9 @@
 package objetos;
 
-import interfaces.ElementoConcretoIF;
-import interfaces.VisitorIF;
+import interfaces.ElementoConcreto;
+import interfaces.Visitor;
 
-public class Circulo implements ElementoConcretoIF{
+public class Circulo implements ElementoConcreto {
 
 private double raio;
 	
@@ -19,9 +19,9 @@ private double raio;
 		this.raio = raio;
 	}
 
-	public void aceitaVisita(VisitorIF visitor) {
-		double result = visitor.visitaCirculo(this);
-		if(result != -1)
+	public void aceitaVisita(Visitor visitor) {
+		Double result = visitor.visitaCirculo(this);
+		if(result != null)
 			System.out.println(result);
 	}
 }

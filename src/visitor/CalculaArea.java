@@ -1,29 +1,29 @@
 package visitor;
 
-import interfaces.VisitorIF;
+import interfaces.Visitor;
 import objetos.Circulo;
 import objetos.Retangulo;
 import objetos.Trapezio;
 import objetos.Triangulo;
 
-public class VisitorCalculaArea implements VisitorIF{
+public class CalculaArea implements Visitor{
 	@Override
-	public double visitaRetangulo(Retangulo r) {
+	public Double visitaRetangulo(Retangulo r) {
 		return r.getAltura() * r.getBase();
 	}
 
 	@Override
-	public double visitaTriangulo(Triangulo t) {
+	public Double visitaTriangulo(Triangulo t) {
 		return (t.getAltura() * t.getBase()) / 2;
 	}
 
 	@Override
-	public double visitaCirculo(Circulo c) {
+	public Double visitaCirculo(Circulo c) {
 		return Math.PI * (c.getRaio() * c.getRaio());
 	}
 
 	@Override
-	public double visitaTrapezio(Trapezio t) {
+	public Double visitaTrapezio(Trapezio t) {
 		return ((t.getBaseMaior() + t.getBaseMenor()) * t.getAltura()) / 2;
 	}
 }

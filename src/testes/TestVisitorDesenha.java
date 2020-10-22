@@ -6,54 +6,49 @@ import org.junit.jupiter.api.Test;
 
 import org.junit.jupiter.api.BeforeAll;
 
-import interfaces.VisitorIF;
+import interfaces.Visitor;
 import objetos.Circulo;
 import objetos.Retangulo;
 import objetos.Trapezio;
 import objetos.Triangulo;
-import visitor.VisitorDesenha;
+import visitor.Desenha;
 
 class TestVisitorDesenha {
 
-	static VisitorIF visitor;
+	static Visitor vis;
 
-	static Circulo circulo;
-	static Triangulo triangulo;
-	static Retangulo retangulo;
-	static Trapezio trapezio;
+	static Circulo ci;
+	static Triangulo tri;
+	static Retangulo ret;
+	static Trapezio trp;
 	
 	@BeforeAll
 	static void init(){
-		visitor = new VisitorDesenha();
-		
-		circulo = new Circulo(5);
-		triangulo = new Triangulo(7, 3);
-		retangulo = new Retangulo(10, 5);
-		trapezio = new Trapezio(5, 8, 4, 3);
+		vis = new Desenha();
+		trp = new Trapezio(5, 8, 4, 3);
+		ci = new Circulo(5);
+		tri = new Triangulo(7, 3);
+		ret = new Retangulo(10, 5);
 	}
 
 	@Test
 	void desenhaCirculo() {
-		double expected = -1;
-		assertEquals(expected, visitor.visitaCirculo(circulo));
+		assertNull(vis.visitaCirculo(ci));
 	}
 	
 	@Test
 	void desenhaTriangulo() {
-		double expected = -1;
-		assertEquals(expected, visitor.visitaTriangulo(triangulo));
+		assertNull(vis.visitaTriangulo(tri));
 	}
 	
 	@Test
 	void desenhaRetangulo() {
-		double expected = -1;
-		assertEquals(expected, visitor.visitaRetangulo(retangulo));
+		assertNull(vis.visitaRetangulo(ret));
 	}
 	
 	@Test
 	void desenhaTrapezio() {
-		double expected = -1;
-		assertEquals(expected, visitor.visitaTrapezio(trapezio));
+		assertNull(vis.visitaTrapezio(trp));
 	}
 
 }

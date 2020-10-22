@@ -1,9 +1,9 @@
 package objetos;
 
-import interfaces.ElementoConcretoIF;
-import interfaces.VisitorIF;
+import interfaces.ElementoConcreto;
+import interfaces.Visitor;
 
-public class Retangulo implements ElementoConcretoIF{
+public class Retangulo implements ElementoConcreto {
 
 	private double base;
 	private double altura;
@@ -29,9 +29,9 @@ public class Retangulo implements ElementoConcretoIF{
 		this.altura = altura;
 	}
 
-	public void aceitaVisita(VisitorIF visitor) {
-		double result = visitor.visitaRetangulo(this);
-		if(result != -1)
+	public void aceitaVisita(Visitor visitor) {
+		Double result = visitor.visitaRetangulo(this);
+		if(result != null)
 			System.out.println(result);
 	}
 	
